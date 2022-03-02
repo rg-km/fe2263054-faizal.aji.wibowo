@@ -6,11 +6,8 @@
 
 ---
 
-## To generate repo without answer
+# fe2263054-faizal.aji.wibowo
 
-- `go run cli/main.go answer remove -r backend` or `go run cli/main.go answer remove -r frontend`
-- `rsync -vhra . ../playground --include='**.gitignore' --exclude='/.git' --filter=':- .gitignore' --delete-after`
-- `cd ../playground`
-- `git add .`
-- `git commit -nm "(sync)"`
-- `git push`
+## Nama: Faizal Aji Wibowo
+
+## Asal: Tegal
