@@ -10,4 +10,4 @@
 
 ## Nama: Faizal Aji Wibowo
 
-## Asal: Tegal
+## Asal: Kota Tegal
