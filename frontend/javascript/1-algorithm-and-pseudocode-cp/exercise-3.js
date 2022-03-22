@@ -3,7 +3,7 @@
 // TODO: answer here
 // * ALGORITMA
 let angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let jumlah = 0;
+let jumlah = 0; 
 let genap = [];
 
 for (let i = 0; i < angka.length; i++) {
