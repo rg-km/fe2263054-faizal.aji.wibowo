@@ -14,7 +14,7 @@ if (usia >= 17) {
 
 // * PSEUDOCODE
 
-// * VARIABLE usia;
+// * LET usia;
 // * DISPLAY ("Masukkan Usia: ");
 // * IF (usia >= 17)
 // 	*	  	DISPLAY ("Umur "+ usia + " tahun" +" bisa membuat SIM");
