@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&display=swap');
+@import 'colors';
+
+header{
+    .banner{
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0, 0.5),rgba(0,0,0,0.5)), url('/img/about.jpeg');
+        background-size: cover;
+    }
+    .banner-content{
+        height: 100%;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .animate__animated{
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(36, 36, 36);
+    overflow: hidden;
+    
+    .card{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 200px 200px;
+        grid-template-areas: "image" "text";
+
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+        text-align: center;
+        cursor: pointer;
+        margin: 30px;
+        
+        .card-image1{
+            grid-area: image;
+            background: url('/img/men1.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image2{
+            grid-area: image;
+            background: url('/img/men2.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image3{
+            grid-area: image;
+            background: url('/img/men3.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image4{
+            grid-area: image;
+            background: url('/img/women1.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image5{
+            grid-area: image;
+            background: url('/img/women2.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+        .card-image6{
+            grid-area: image;
+            background: url('/img/women3.jpg');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background-size: cover;
+        }
+
+        .card-text{
+            grid-area: text;
+            margin: 30px;
+    
+            .venue{
+                color: $pink;
+                font-size: 15px;
+            }
+            h2{
+                margin-top: 0px;
+                font-size: 28px;
+            }
+            p{
+                color: grey;
+                font-size: 15px;
+                font-weight: 300;
+            }
+        }
+
+        .card:hover{
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+  /* Untuk mobile responsive */
+
+  @media (max-width: 1024px) {
+    //  PR PAK :(
+  }
+
+/* Scroll Bar */
+::-webkit-scrollbar{
+    width: .60rem;
+    background-color: $scroll-background-color;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $scroll-bar-color;
+    border-radius: .5rem;   
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: $scroll-bar-hover;
+}
