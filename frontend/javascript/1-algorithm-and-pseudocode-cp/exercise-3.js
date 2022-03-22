@@ -17,14 +17,14 @@ console.log(jumlah);
 
 // * PSEUDOCODE
 
-// * VARIABLE angka ARRAY 1 TO 10 
-// * VARIABLE jumlah 0
-// * VARIABLE genap []
+// * LET angka ARRAY 1 TO 10 
+// * LET jumlah 0
+// * LET genap []
 
 // * FOR LOOP (let i = 0; i < angka.length; i++)
 // *    IF angka[i] % 2 == 0
-// *       VARIABLE genap PUSH TO ARRAY angka
-// *       VARIABLE jumlah SUM WITH ARRAY angka
+// *        genap PUSH TO ARRAY angka
+// *        jumlah SUM WITH ARRAY angka
 
-// * DISPLAY VARIABLE genap
-// * DISPLAY VARIABLE jumlah
+// * DISPLAY genap
+// * DISPLAY jumlah
