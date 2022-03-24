@@ -5,6 +5,10 @@
 // - multiply() mengalikan nilai yang disimpan.
 // - division() membagi nilai yang disimpan.
 
+const prompt = require("prompt-sync")();
+const angka1 = parseFloat(prompt("Masukkan bialngan pertama: "));
+const angka2 = parseFloat(prompt("Masukkan bialngan kedua: "));
+
 let calculator = {
   // Tulis kode di sini
   // TODO: answer here
@@ -35,7 +39,7 @@ let calculator = {
 };
   
 // calculator.read();
-console.log(calculator.sum(3, 7));
-console.log(calculator.substract(7, 3));
-console.log(calculator.multiply(3, 3));
-console.log(calculator.division(10, 2));
+console.log(calculator.sum(angka1, angka2));
+console.log(calculator.substract(angka1, angka2));
+console.log(calculator.multiply(angka1, angka2));
+console.log(calculator.division(angka1, angka2));
