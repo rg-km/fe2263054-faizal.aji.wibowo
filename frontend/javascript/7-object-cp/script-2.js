@@ -8,10 +8,34 @@
 let calculator = {
   // Tulis kode di sini
   // TODO: answer here
+
+  // Penjumlahan
+  sum(angka1, angka2) {
+    let hasil = angka1 + angka2;
+    return `${hasil}`;
+  },
+  
+  // Pengurangan
+  substract(angka1, angka2) {
+    let hasil = angka1 - angka2;
+    return `${hasil}`;
+  },
+  
+  // Perkalian
+  multiply(angka1, angka2) {
+    let hasil = angka1 * angka2;
+    return `${hasil}`;
+  },
+  
+  // Pembagian
+  division(angka1, angka2) {
+    let hasil = angka1 / angka2;
+    return `${hasil}`;
+  }
 };
   
-calculator.read();
-console.log(calculator.sum());
-console.log(calculator.substract());
-console.log(calculator.multiply());
-console.log(calculator.division());
+// calculator.read();
+console.log(calculator.sum(3, 7));
+console.log(calculator.substract(7, 3));
+console.log(calculator.multiply(3, 3));
+console.log(calculator.division(10, 2));
