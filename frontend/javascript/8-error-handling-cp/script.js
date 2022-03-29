@@ -11,7 +11,7 @@
 
   // TODO: answer here
   const prompt = require("prompt-sync")();
-  const month = prompt('Masukan bulan (angka): ');
+  const month = prompt("Masukan bulan (angka): ");
   const result = getMonth(month);
 
   function getMonth(number) {
