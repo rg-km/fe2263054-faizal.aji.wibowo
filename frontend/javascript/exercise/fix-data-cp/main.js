@@ -37,10 +37,27 @@
 
 function fixData(line) {
   // TODO: answer here
+   const vokal = (line.match(/[aeiou]/g) || []).length;
+   const konsonan = (line.match(/[bcdfghjklmnpqrstvwxyz]/g) || []).length;
+   
+   console.log(`vokal ada ${vokal}, konsonan ada ${konsonan}`);
+
+   if (konsonan > vokal) {
+      return line.replace(/[#]/g, 'a');
+   } else if (vokal > konsonan) {
+      return line.replace(/[#]/g, 'b');
+   } else if (vokal == konsonan) {
+      return line.replace(/[#]/g, 'c');
+   } else {
+      return line;
+   } 
 }
 
-console.log(fixData('aoi#fdg#ue'))
-console.log(fixData('eh#xyz#oi#'))
-console.log(fixData('#eui#bcl##'))
+console.log(fixData('jsksbnsmm'));
+console.log(fixData('baba#'));
+
+console.log(fixData('aoi#fdg#ue'));
+console.log(fixData('eh#xyz#oi#'));
+console.log(fixData('#eui#bcl##'));
 
 module.exports = fixData
