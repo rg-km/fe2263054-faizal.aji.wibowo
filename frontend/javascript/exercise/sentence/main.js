@@ -11,5 +11,16 @@ var fifth = 'I';
 var sixth = 'love';
 var seventh = 'it!';
 
-console.log(word + " " + second + " " + third +  " " + fourth + " " + fifth +  " " + sixth + " " + seventh);
-console.log(`${word} ${second} ${third} ${fourth} ${fifth} ${sixth} ${seventh}`);
+// console.log(word + " " + second + " " + third +  " " + fourth + " " + fifth +  " " + sixth + " " + seventh);
+// console.log(`${word} ${second} ${third} ${fourth} ${fifth} ${sixth} ${seventh}`);
+
+// cara 1
+let sentence = word.concat(" ", second, " ", third, " ", fourth, " ", fifth, " ", sixth, " ", seventh);
+
+// cara 2
+// let sentence = word + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + " " + seventh;
+
+// cara 3 template literals
+// let sentence = `${word} ${second} ${third} ${fourth} ${fifth} ${sixth} ${seventh}`;
+
+console.log(sentence);
