@@ -21,8 +21,9 @@ function konversiMenit(minutes) {
   return jam + ':' + menit;
 }
 
-console.log(konversiMenit(10));
-console.log(konversiMenit(65));
-console.log(konversiMenit(700));
+console.log(konversiMenit(61));
+console.log(konversiMenit(94));
+console.log(konversiMenit(51));
+console.log(konversiMenit(187));
 
 module.exports = konversiMenit;
