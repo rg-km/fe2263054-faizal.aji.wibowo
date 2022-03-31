@@ -13,7 +13,26 @@
 
 function gradingStudents(grades) {
   // Write your code here
-  // TODO: answer here
+  let result = [];
+  
+  for (let i = 0; i < grades.length; i++) {
+    let grade = grades[i];
+
+    if (grade < 38) {
+      result.push(grade);
+      console.log("hasil grade < 38 yg gaboleh dirounding = " + grade);
+    } else {
+      let rounding = grade + (5 - grade % 5);
+      if (rounding - grade < 3) {
+        result.push(rounding);
+        console.log("hasil rounding grade > 38 = " + rounding)
+      } else {
+        result.push(grade);
+        console.log("hasil grade yg gaboleh dirounding (karna selisihnya 3 or lebih tinggi) = " + grade)
+      }
+    }
+  }
+  return result;
 }
 
 function main() {
