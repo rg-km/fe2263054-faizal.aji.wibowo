@@ -14,6 +14,17 @@
 function diagonalDifference(arr) {
   // Write your code here
   // TODO: answer here
+    let diagonal1 = 0;
+    let diagonal2 = 0;
+  
+    for (let i = 0; i < arr.length; i++) {
+      diagonal1 += arr[i][i];
+      diagonal2 += arr[i][arr.length - 1 - i];
+    }
+  
+    // diagonalDifference = Math.abs(diagonal1 - diagonal2);
+    return Math.abs(diagonal1 - diagonal2);
+    // return diagonalDifference;
 }
 
 function main() {
