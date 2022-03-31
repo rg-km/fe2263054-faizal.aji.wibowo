@@ -5,41 +5,40 @@
 // - multiply() mengalikan nilai yang disimpan.
 // - division() membagi nilai yang disimpan.
 
-const prompt = require("prompt-sync")();
-const angka1 = parseFloat(prompt("Masukkan bialngan pertama: "));
-const angka2 = parseFloat(prompt("Masukkan bialngan kedua: "));
+const angka1 = 10;
+const angka2 = 5;
 
 let calculator = {
   // Tulis kode di sini
   // TODO: answer here
-
-  // Penjumlahan
-  sum(angka1, angka2) {
-    let hasil = angka1 + angka2;
-    return `${hasil}`;
+  angka1: 0,
+  angka2: 0,
+  read(a, b){
+    this.angka1 = a;
+    this.angka2 = b;
   },
-  
+  // Penjumlahan
+  sum() {
+    return angka1 + angka2;
+  },
   // Pengurangan
-  substract(angka1, angka2) {
-    let hasil = angka1 - angka2;
-    return `${hasil}`;
+  substract() {
+    return angka1 - angka2;
   },
   
   // Perkalian
-  multiply(angka1, angka2) {
-    let hasil = angka1 * angka2;
-    return `${hasil}`;
+  multiply() {
+    return angka1 * angka2;
   },
   
   // Pembagian
-  division(angka1, angka2) {
-    let hasil = angka1 / angka2;
-    return `${hasil}`;
+  division() {
+    return angka1 / angka2;
   }
 };
-  
-// calculator.read();
-console.log(calculator.sum(angka1, angka2));
-console.log(calculator.substract(angka1, angka2));
-console.log(calculator.multiply(angka1, angka2));
-console.log(calculator.division(angka1, angka2));
+
+calculator.read(angka1, angka2);
+console.log(calculator.sum());
+console.log(calculator.substract());
+console.log(calculator.multiply());
+console.log(calculator.division());

@@ -15,13 +15,16 @@ let arr = numInput.split(" ").map(Number);
 // jika tidak ada elemen dalam array, jika semua bilangan negatif, dapat mengembalikan nilai 0
 let maxSum = 0; 
 
-// TODO: answer here
-let max = 0;
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-        maxSum = arr[i];
-    } else {
-        maxSum += arr[i];
-    }
+  let temp = 0;
+  for (let j = i; j < arr.length; j++) {
+    temp += arr[j];
+    // i = 0
+    // 1. temp = 0 + 1 // arr[0] --> maxsum = 1;
+    // 2. temp = 1 + 2 // arr[1] ---> maxsum = 3
+    maxSum = Math.max(maxSum, temp);
+  }
+  // console.log(temp)
 }
+
 console.log(maxSum);
