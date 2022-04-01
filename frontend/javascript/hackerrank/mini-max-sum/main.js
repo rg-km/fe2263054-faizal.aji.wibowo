@@ -13,6 +13,21 @@
 function miniMaxSum(arr) {
   // Write your code here
   // TODO: answer here
+  let min = 0;
+  let max = 0;
+  let sum = 0;
+
+  for(let i=0; i<arr.length; i++){
+    if(i < arr.length-1){
+      min += arr[i];
+    }
+  }
+
+  for(let j= arr.length-1; j > 0; j--){
+      max += arr[j];
+  }
+  sum = min + " " + max;
+  return sum;
 }
 
 function main() {
