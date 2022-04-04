@@ -27,10 +27,8 @@ let stoptime = true;
 
 function start() {
   // TODO: answer here
-  if (stoptime == true){
-    stoptime = false;
-    runTime();
-  }
+  stoptime = false;
+  runTime();
 }
 
 function stop() {
