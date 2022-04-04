@@ -8,31 +8,6 @@ Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama 
 // let year = element untuk menampilkan year
 // let button = tombol untuk melakuan generate random quote
 
-let quote = document.getElementById('quote');
-
-let author = document.getElementById('author');
-function getAuthor() {
-	let author = document.getElementById('author');
-	return author.innerHTML;
-}
-
-let citation = document.getElementById('citation');
-function getCitation() {
-	let citation = document.getElementById('citation');
-	return citation.innerHTML;
-}
-
-let year = document.getElementById('year');
-function getYear() {
-	let year = document.getElementById('year');
-	return year.innerHTML;
-}
-
-let button = document.getElementById('button');
-button.addEventListener('click', displayQuote); 
-
-
-
 var quotes = [
 	{
 		quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -197,13 +172,28 @@ var quotes = [
 ];
 
 // TODO: answer here
+const quote = document.getElementById("random-quote");
+const author = document.getElementsByClassName("author")[0];
+const citation = document.getElementsByClassName("citation")[0];
+const year = document.getElementsByClassName("year")[0];
+const button = document.getElementsByClassName("btn btn-generate btn-success")[0];
+
 
 function getQuote() {
 	// TODO: answer here
-
+	let randomNumber = Math.floor(Math.random() * (quotes.length));
+	return quotes[randomNumber];
+	
 }
 
 
 function displayQuote() {
 	// TODO: answer here
+	let quoteObject = getQuote();
+	quote.innerText = quoteObject.quote;
+	author.innerText = quoteObject.author;
+	citation.innerText = quoteObject.citation ? quoteObject.citation : " ";
+	year.innerText = quoteObject.year ? quoteObject.year : " ";
 }
+
+button.addEventListener("click", displayQuote);
