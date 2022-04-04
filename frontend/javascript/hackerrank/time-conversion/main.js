@@ -15,6 +15,17 @@
 function timeConversion(s) {
   // Write your code here
   // TODO: answer here
+    let format = s.substring(s.length - 2);
+    let hours = s.substring(0, 2);
+    let minutes = s.substring(2, 8);
+
+    if (format == 'AM'){
+        hours = hours == 12 ? '00' : hours;
+    }
+    if (format == 'PM'){
+        hours = +hours + 12 < 24 ? +hours + 12 : '12';
+    }
+    return hours + '' + minutes;
 }
 
 function main() {
