@@ -8,6 +8,31 @@ Uncomment variable dibawah ini untuk mulai mengerjakan. dilarang mengganti nama 
 // let year = element untuk menampilkan year
 // let button = tombol untuk melakuan generate random quote
 
+let quote = document.getElementById('quote');
+
+let author = document.getElementById('author');
+function getAuthor() {
+	let author = document.getElementById('author');
+	return author.innerHTML;
+}
+
+let citation = document.getElementById('citation');
+function getCitation() {
+	let citation = document.getElementById('citation');
+	return citation.innerHTML;
+}
+
+let year = document.getElementById('year');
+function getYear() {
+	let year = document.getElementById('year');
+	return year.innerHTML;
+}
+
+let button = document.getElementById('button');
+button.addEventListener('click', displayQuote); 
+
+
+
 var quotes = [
 	{
 		quote: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -175,6 +200,7 @@ var quotes = [
 
 function getQuote() {
 	// TODO: answer here
+
 }
 
 
