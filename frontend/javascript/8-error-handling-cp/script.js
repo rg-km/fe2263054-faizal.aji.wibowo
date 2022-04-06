@@ -9,18 +9,18 @@
 // Input: 15
 // Output: "Masukan salah. Input bulan antara 1-12"
 
-  // TODO: answer here
-  const prompt = require("prompt-sync")();
-  const month = prompt("Masukan bulan (angka): ");
-  const result = getMonth(month);
-
-  function getMonth(number) {
-    let monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-    if (number < 1 || number > 12) {
-      return "Masukan salah. Input bulan antara 1-12";
+function getMonthName(monthNumber) {
+    monthNumber = monthNumber - 1;
+    let months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+                  'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    if (months[monthNumber]) {
+      console.log("Bulan ke-" + (monthNumber + 1) + " adalah " + months[monthNumber])
     } else {
-      return "Bulan ke-" + number + " adalah " + monthNames[number - 1];
+      throw new Error("Masukan salah. Input bulan antara 1-12");
     }
   }
-
-  console.log(result);
+  
+  // TODO: answer here
+    let myMonth = parseInt(prompt("Masukan bilangan: "));
+    getMonthName(myMonth);
+  // TODO: answer here
