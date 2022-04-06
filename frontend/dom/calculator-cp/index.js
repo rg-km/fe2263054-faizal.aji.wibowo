@@ -26,9 +26,10 @@ function calculate() {
     let input = document.getElementById('input');
     if (input.value.length > 0) {
         input.value = eval(input.value);
-        // method eval() digunakan untuk evaluate atau execute an expression in JavaScript.
+        // method eval() digunakan untuk evaluate atau mengeksekusi string yang diberikan.
         // dalam hal ini digunakan untuk menghitung nilai dari string yang telah diinputkan.
     } else {
         input.value = '0';
     }
+    
 }
