@@ -9,12 +9,16 @@ let winningCount = {
 //render scoreboard on x-wins and o-wins <label/>
 function renderScore() {
     // TODO: answer here
+    let xScore = document.getElementById("x-wins");
+    let oScore = document.getElementById("o-wins");
+    xScore.innerHTML = winningCount["X"];
+    oScore.innerHTML = winningCount["O"];
 }
 
 //check who the winner is, add the score to the scoreboard, and render the scoreboard
 function checkWinner() {
     //Let's make it simple, just hardcode the winning combinations
-    let getValue = (y, x) => document.getElementById(y + "-" + x).textContent;
+    let getValue = (y, x) => document.getElementById(y + "-" + x).innerHTML;
     let winner = ""
 
     //horizontal
@@ -55,11 +59,12 @@ function checkWinner() {
 }
 
 function checkNoWinner() {
-    let getValue = (y, x) => document.getElementById(y + "-" + x).textContent;
+    let getValue = (y, x) => document.getElementById(y + "-" + x).innerHTML;
     for (let i = 0; i < SIZE; i++) {
         for (let j = 0; j < SIZE; j++) {
             if (getValue(i, j) == "") {
                 // TODO: answer here
+                return false;
             }
         }
     }
@@ -69,12 +74,14 @@ function checkNoWinner() {
 //handle click event, don't forget to disable the button so that it can't be clicked again
 function click(event) {
     this.disabled = true;
-    this.textContent = turn;
+    this.innerHTML = turn;
 
     if (turn == "X") {
         // TODO: answer here
+        turn = "O";
     } else {
         // TODO: answer here
+        turn = "X";
     }
 
     checkWinner()
@@ -104,6 +111,7 @@ function generate() {
             button.style.width = BUTTON_SIZE;
             button.style.height = BUTTON_SIZE;
             // TODO: answer here
+            button.addEventListener("click", click);
             button.id = i + "-" + j;
 
             td.appendChild(button);
