@@ -41,14 +41,17 @@ class Calculator {
     return this;
   }
 
-  squareRoot(num) { 
+  squareRoot() { 
     this.operand = Math.sqrt(this.operand);
     return this;
   }
-
-  getResult() {
-    return this.operand;
-  }
 }
+  const result = new Calculator(4);
+  console.log(result.add(5));
+  // console.log(result.subtract(2));
+  // console.log(result.multiply(3));
+  // console.log(result.divide(2));
+  // console.log(result.square(2));
+  // console.log(result.squareRoot(2));
 
 module.exports = Calculator
