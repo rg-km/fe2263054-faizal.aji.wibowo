@@ -13,6 +13,38 @@ class Person {
   }
   
   // TODO: answer here
+  get getName() {
+    return this.name;
+  }
+
+  get getAge() {
+    return this.age;
+  }
+
+  get getJob() {
+    return this.job;
+  }
+
+  set setName(changedName) {
+    this.name = changedName;
+  }
+
+  set setAge(changedAge) {
+    this.age = changedAge;
+  }
+
+  set setJob(changedJob) {
+    this.job = changedJob;
+  }
 }
 
+  const result = new Person('Faizal', 20, 'Student');  
+  result.setName = 'Izal';
+  result.setAge = 21;
+  result.setJob = 'Programmer';
+  
+  console.log(result.getName); 
+  console.log(result.getAge);
+  console.log(result.getJob);
+  
 module.exports = Person
