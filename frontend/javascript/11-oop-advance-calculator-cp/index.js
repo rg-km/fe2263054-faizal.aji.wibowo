@@ -45,13 +45,18 @@ class Calculator {
     this.operand = Math.sqrt(this.operand);
     return this;
   }
+
+  getValue() {
+    return this.operand;
+  }
 }
-  const result = new Calculator(4);
-  console.log(result.add(5));
-  // console.log(result.subtract(2));
-  // console.log(result.multiply(3));
-  // console.log(result.divide(2));
-  // console.log(result.square(2));
-  // console.log(result.squareRoot(2));
+  const calc = new Calculator(5);
+  console.log(calc.add(5).subtract(2).multiply(3).divide(2).square(2).squareRoot());
+  console.log(calc.getValue());
+  // console.log(calc.subtract(2));
+  // console.log(calc.multiply(3));
+  // console.log(calc.divide(2));
+  // console.log(calc.square(2));
+  // console.log(calc.squareRoot(2));
 
 module.exports = Calculator
