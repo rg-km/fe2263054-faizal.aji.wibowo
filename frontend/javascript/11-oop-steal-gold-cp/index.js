@@ -50,7 +50,6 @@ class Player {
       } else {
         player.setGold(this.getGold() - 5);
         this.setGold(this.getGold() + 5);
-        this.setHasBeenRobbed(true);
         return "Berhasil mencuri 5 gold";
       }
     } else {
