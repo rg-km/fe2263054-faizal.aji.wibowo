@@ -4,6 +4,10 @@
 function constantNoChange() {
   const kota = "Tanggerang";
   // TODO: answer here
+  {
+    kota = "Tegal";
+    return kota;
+  }
 }
 
 module.exports = constantNoChange
