@@ -5,8 +5,8 @@
  *  Output: 8
  */
 
- const sumTotalArray = (numbers) => {
-    // TODO: answer here
-  };
-  
-  module.exports = sumTotalArray
+const sumTotalArray = (numbers) => {
+  // TODO: answer here
+};
+
+module.exports = sumTotalArray
