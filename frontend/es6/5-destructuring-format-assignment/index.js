@@ -5,6 +5,8 @@
 
 const format = (user) => {
   // TODO: answer here
+  let { name, email, occupation = 'Unemployed' } = user;
+  return `${name} - ${email} - ${occupation}`;
 };
 
 console.log(format({ name: "John", email: "john@example.com" }));
