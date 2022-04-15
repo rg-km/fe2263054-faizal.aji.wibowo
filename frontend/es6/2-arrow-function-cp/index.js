@@ -24,5 +24,5 @@ const returnTheTwo = () => 2;
 module.exports = {
   multiplyByTwo,
   multiply,
-  returnTheTwo,
-};
+  returnTheTwo
+}
