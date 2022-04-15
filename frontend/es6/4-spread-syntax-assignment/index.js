@@ -7,7 +7,7 @@
 
 const mergeTwoObjects = (firstObject, secondObject) => {
   // TODO: answer here
-  let object = {};
+  const object = {};
   for (let key in firstObject) {
     object[key] = firstObject[key];
   }
