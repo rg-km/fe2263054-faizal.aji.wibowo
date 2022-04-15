@@ -15,6 +15,7 @@ const mergeTwoObjects = (firstObject, secondObject) => {
     object[key] = secondObject[key];
   }
   return object;
+  
 };
 
 module.exports = mergeTwoObjects
