@@ -7,14 +7,14 @@
 
 const mergeTwoObjects = (firstObject, secondObject) => {
   // TODO: answer here
-  const object = {};
+  const newObject = {...firstObject, ...secondObject};
   for (let key in firstObject) {
-    object[key] = firstObject[key];
+    newObject[key] = firstObject[key];
   }
   for (let key in secondObject) {
-    object[key] = secondObject[key];
+    newObject[key] = secondObject[key];
   }
-  return object;
+  return newObject;
 };
 
 module.exports = mergeTwoObjects
