@@ -11,6 +11,9 @@
 
 const filterDigit = (array, digit) => {
   // TODO: answer here
+  return array.filter((item) => {
+    return item.toString().length === digit;
+  });
 };
 
 module.exports = filterDigit
