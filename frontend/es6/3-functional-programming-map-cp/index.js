@@ -18,5 +18,5 @@ const lowerToUpperMap = (array) => {
   // cara lain:
   // return array.map(letter => ({[letter]: letter.toUpperCase()}));
 };
-
+console.log(lowerToUpperMap(['a', 'b', 'c', 'd']));
 module.exports = lowerToUpperMap
