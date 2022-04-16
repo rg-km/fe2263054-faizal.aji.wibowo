@@ -18,5 +18,5 @@ const filterDigit = (array, digit) => {
   // cara lain:
   // return array.filter((item) => item.toString().length === digit);
 };
-
+console.log(filterDigit([88, 44, 3, 8481, 444], 2));
 module.exports = filterDigit

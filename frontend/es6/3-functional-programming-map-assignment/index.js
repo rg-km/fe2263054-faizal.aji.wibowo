@@ -24,13 +24,26 @@
 
 const returnUserAverageScore = (students) => {
   // TODO: answer here
-  return students.map(student => {
-    const averageScore = student.nilai.reduce((a, b) => a + b) / student.nilai.length;
+  return students.map((item) => {
     return {
-      name: student.name,
-      rataNilai: Math.round(averageScore)
-    }
-  })
+      name: item.name,
+      rataNilai: Math.round(item.nilai.reduce((a, b) => a + b) / item.nilai.length)
+    };
+  });
 };
+
+console.log(returnUserAverageScore([
+    {
+        name: "Yono",
+        nilai: [6, 8, 7, 7, 5, 5]
+    },
+    {
+        name: "Dodi",
+        nilai: [9, 6, 5, 10, 8, 6]
+    },
+    {
+        name: 'Dori',
+        nilai: [4, 5, 6, 3, 5, 6]
+    }]));
 
 module.exports = returnUserAverageScore
