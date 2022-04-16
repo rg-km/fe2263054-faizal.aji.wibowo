@@ -14,5 +14,5 @@ const sumTotalArray = (numbers) => {
   // cara lain:
   // return numbers.reduce((a, b) => a + b);
 };
-
+console.log(sumTotalArray([1, 1, 1, 5]));
 module.exports = sumTotalArray
