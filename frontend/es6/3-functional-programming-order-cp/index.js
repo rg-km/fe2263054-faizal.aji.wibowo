@@ -9,6 +9,9 @@
 
 function customisableGreeting(user, formatCallback) {
   // TODO: answer here
+  firstnime = user.firstName;
+  lastname = user.lastName;
+  formattedName = formatCallback(user);
   return `Hi name is ${formattedName}, how are you?`;
 }
 
