@@ -9,6 +9,14 @@
 
 const lowerToUpperMap = (array) => {
   // TODO: answer here
-};
+  return array.map(letter => {
+    return {
+      [letter]: letter.toUpperCase()
+    }
+  });
 
+  // cara lain:
+  // return array.map(letter => ({[letter]: letter.toUpperCase()}));
+};
+console.log(lowerToUpperMap(['a', 'b', 'c', 'd']));
 module.exports = lowerToUpperMap
