@@ -11,6 +11,9 @@ const filterString = (array) => {
   return array.filter((item) => {
     return typeof item === "string";
   });
+
+  // cara lain:
+  // return array.filter((item) => typeof item === "string");
 };
 
 module.exports = filterString
