@@ -14,6 +14,9 @@ const filterDigit = (array, digit) => {
   return array.filter((item) => {
     return item.toString().length === digit;
   });
+
+  // cara lain:
+  // return array.filter((item) => item.toString().length === digit);
 };
 
 module.exports = filterDigit
