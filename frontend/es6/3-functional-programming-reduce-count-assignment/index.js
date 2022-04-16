@@ -8,14 +8,19 @@
 
 const countRepetition = (numbers) => {
   // TODO: answer here
-  return repetition = numbers.reduce((acc, curr) => {
-    if (curr in acc) {
-      acc[curr]++;
+  return repetition = numbers.reduce((array, number) => {
+    if (number in array) {
+      array[number]++;
     } else {
-      acc[curr] = 1;
+      array[number] = 1;
     }
-    return acc;
+    return array;
   }, {});
+
+  // cara lain:
+  //   array[number] = array[number] ? array[number] + 1 : 1;
+  //   return array;
+  // }, {});
 };
 
 console.log(countRepetition([1, 1, 1, 5, 5, 10, 9]));
