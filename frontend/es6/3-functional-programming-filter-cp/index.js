@@ -15,10 +15,8 @@
  */
 
 const findAnimal = (bush) => {
-  // TODO: answer here
-  return bush.filter((item) => {
-    return item.toLowerCase();
-  }); 
+  // TODO: answer here 
+  return bush.split("").filter((String) => String === String.toLowerCase()).join("");
 };
-console.log(findAnimal('UkUNFYGaFYFYmtNUHbJKHJJiOKDJKDnKFKFLgLLF'));
+console.log(findAnimal('UkUNFYGaFYFYmTNUHbJKHJJiOKDJKDnKFKFLgLLF'));
 module.exports = findAnimal
