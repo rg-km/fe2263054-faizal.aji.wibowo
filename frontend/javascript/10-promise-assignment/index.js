@@ -65,7 +65,7 @@ function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
   const urlPeople = `https://swapi.dev/api/people/${peopleId}`;
   const urlFilms = `https://swapi.dev/api/people/${peopleId}/films`;
-  
+
   const promisePeople = new Promise((resolve, reject) => {
     promiseStarWarsData(urlPeople)
       .then((people) => {
@@ -75,7 +75,7 @@ function getDataPeopleByIdWithFilms(peopleId) {
         reject(err);
       });
   });
-  
+
   const promiseFilms = new Promise((resolve, reject) => {
     promiseStarWarsData(urlFilms)
       .then((films) => {
@@ -86,9 +86,13 @@ function getDataPeopleByIdWithFilms(peopleId) {
       });
   });
 
-  Promise.all([promisePeople, promiseFilms]).then((result) => {
-    console.log(result);
-  });
+  Promise.all([promisePeople, promiseFilms])
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 module.exports = { getDataPeopleByIdWithFilms };
