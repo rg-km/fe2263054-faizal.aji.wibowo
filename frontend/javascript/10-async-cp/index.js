@@ -41,33 +41,16 @@
  
  async function getDataPeopleById(id) {
    // TODO: answer here
-    const urlPeople = `https://swapi.dev/api/people/${id}`;
-    const urlFilms = `https://swapi.dev/api/people/${id}/films`;
+    const url = `https://swapi.dev/api/people/${id}`;
+    const dataPeople = await getStarWarsData(url);
     
-    getStarWarsData(urlPeople)
-      .then((people) => {
-        const peopleData = JSON.parse(people);
-        const peopleName = peopleData.name;
-        const peopleHeight = peopleData.height;
-        const peopleBirthYear = peopleData.birth_year;
-        return peopleName + ", memiliki tinggi " + peopleHeight + "cm dan lahir pada tahun " + peopleBirthYear;
-      }
-      )
-      .catch((err) => {
-        console.log(err);
-      });
-
-    getStarWarsData(urlFilms)
-      .then((films) => {
-        const filmsData = JSON.parse(films);
-        const filmsTitle = filmsData.title;
-        const filmsEpisode = filmsData.episode_id;
-        return filmsTitle + ", episode " + filmsEpisode;
-      }
-      )
-      .catch((err) => {
-        console.log(err);
-      });
+    getStarWarsData(url)
+    const peopleData = JSON.parse(dataPeople);
+    const peopleName = peopleData.name;
+    const peopleHeight = peopleData.height;
+    const peopleBirthYear = peopleData.birth_year;
+    const result = `${peopleName}, memiliki tinggi ${peopleHeight}cm dan lahir pada tahun ${peopleBirthYear}`;
+    return result;
  }
 
  module.exports = {
