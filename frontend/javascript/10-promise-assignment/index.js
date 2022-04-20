@@ -86,7 +86,9 @@ function getDataPeopleByIdWithFilms(peopleId) {
       });
   });
 
-  return Promise.all([promisePeople, promiseFilms]);
+  Promise.all([promisePeople, promiseFilms]).then((result) => {
+    console.log(result);
+  });
 }
 
 module.exports = { getDataPeopleByIdWithFilms };
