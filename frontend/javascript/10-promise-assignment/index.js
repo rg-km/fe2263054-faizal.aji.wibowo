@@ -65,34 +65,28 @@ function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
   const urlPeople = `https://swapi.dev/api/people/${peopleId}`;
   const urlFilms = `https://swapi.dev/api/people/${peopleId}/films`;
-
-  const promisePeople = new Promise((resolve, reject) => {
-    promiseStarWarsData(urlPeople)
-      .then((people) => {
-        resolve(people);
-      })
-      .catch((err) => {
-        reject(err);
+  const dataPeople = promiseStarWarsData(urlPeople);
+  const dataFilms = promiseStarWarsData(urlFilms);
+  const result = {};
+  
+  return Promise.all([dataPeople, dataFilms])
+    .then(([people, films]) => {
+      result.name = people.name;
+      result.height = people.height;
+      result.mass = people.mass;
+      result.hair_color = people.hair_color;
+      result.skin_color = people.skin_color;
+      result.eye_color = people.eye_color;
+      result.birth_year = people.birth_year;
+      result.gender = people.gender;
+      result.films = films.filter((film) => {
+        return {
+          title: film.title,
+          episode_id: film.episode_id,
+        };
       });
-  });
-
-  const promiseFilms = new Promise((resolve, reject) => {
-    promiseStarWarsData(urlFilms)
-      .then((films) => {
-        resolve(films);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
-
-  Promise.all([promisePeople, promiseFilms])
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => {
-      console.log(err);
     });
 }
+// console.log(getDataPeopleByIdWithFilms(1));
 
 module.exports = { getDataPeopleByIdWithFilms };
