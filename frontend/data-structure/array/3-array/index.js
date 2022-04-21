@@ -17,7 +17,12 @@
 
 function runningSum(nums) {
     let result = [];
-    return result // TODO: replace this
+    let temp = 0;
+    for (let i = 0; i < nums.length; i++) {
+        temp += nums[i];
+        result.push(temp);
+    }
+    return result;
 }
 
 console.log(runningSum([1,2,3,4]));

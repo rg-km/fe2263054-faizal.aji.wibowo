@@ -63,30 +63,41 @@ function promiseStarWarsData(url) {
 
 function getDataPeopleByIdWithFilms(peopleId) {
   // TODO: answer here
-  const urlPeople = `https://swapi.dev/api/people/${peopleId}`;
-  const urlFilms = `https://swapi.dev/api/people/${peopleId}/films`;
-  const dataPeople = promiseStarWarsData(urlPeople);
-  const dataFilms = promiseStarWarsData(urlFilms);
-  const result = {};
-  
-  return Promise.all([dataPeople, dataFilms])
+  const people = promiseStarWarsData(`https://swapi.dev/api/people/${peopleId}`);
+  const films = people
+    .then((data) => {
+      return Promise.all(
+        data.films.map((film) => {
+          return promiseStarWarsData(film);
+        })
+      );
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return Promise.all([people, films])
     .then(([people, films]) => {
-      result.name = people.name;
-      result.height = people.height;
-      result.mass = people.mass;
-      result.hair_color = people.hair_color;
-      result.skin_color = people.skin_color;
-      result.eye_color = people.eye_color;
-      result.birth_year = people.birth_year;
-      result.gender = people.gender;
-      result.films = films.filter((film) => {
-        return {
-          title: film.title,
-          episode_id: film.episode_id,
-        };
-      });
+      return {
+        name: people.name,
+        height: people.height,
+        mass: people.mass,
+        hair_color: people.hair_color,
+        skin_color: people.skin_color,
+        eye_color: people.eye_color,
+        birth_year: people.birth_year,
+        gender: people.gender,
+        films: films.map((film) => {
+          return {
+            title: film.title,
+            episode_id: film.episode_id,
+          };
+        }),
+      };
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
-// console.log(getDataPeopleByIdWithFilms(1));
 
 module.exports = { getDataPeopleByIdWithFilms };

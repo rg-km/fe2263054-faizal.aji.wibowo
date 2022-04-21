@@ -14,18 +14,30 @@
 // Ada kemungkinan bahwa beberapa kalimat mengandung jumlah kata yang sama.
 
 function mostWordsFound(sentences) {
-    let max = 0;
-    for (let i = 0; i < sentences.length; i++) {
-        let count = countWords(sentences[i]);
-        // TODO: answer here
+  let max = 0;
+  for (let i = 0; i < sentences.length; i++) {
+    let count = countWords(sentences[i]);
+    // TODO: answer here
+    if (count > max) {
+      max = count;
     }
-    return max
+  }
+  return max;
 }
 
 function countWords(sentence) {
-    return 0; // TODO: replace this
+  let words = sentence.split(" ");
+  let count = 0;
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] !== "") {
+      count++;
+    }
+  }
+  return count;
 }
+console.log(mostWordsFound(["Andi suka bermain bola", "Saya sedang belajar struktur data", "Terima kasih"]));
 
 module.exports = {
-    mostWordsFound, countWords
-}
+  mostWordsFound,
+  countWords,
+};
