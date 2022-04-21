@@ -34,13 +34,9 @@ class Scores {
     students.sort((a, b) => {
       if (a.value > b.value) {
         return -1;
-      } else if (a.value < b.value) {
-        return 1;
       } else if (a.value === b.value) {
         if (a.correct > b.correct) {
           return -1;
-        } else if (a.correct < b.correct) {
-          return 1;
         } else if (a.correct === b.correct) {
           if (a.name < b.name) {
             return -1;
