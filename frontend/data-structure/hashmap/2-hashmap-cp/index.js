@@ -43,6 +43,7 @@ function anagramChecker(str1, str2) {
         return false;
       }
     }
+    return true;
   }
 
   console.log(str1Map);
