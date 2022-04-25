@@ -44,6 +44,9 @@ function anagramChecker(str1, str2) {
       }
     }
   }
+
+  console.log(str1Map);
+  console.log(str2Map);
 }
 
 console.log(anagramChecker("keen", "knee"));
