@@ -18,6 +18,13 @@ function intersection(setA, setB) {
       result.add(array);
     }
   }
+
+  // cara lain:
+  //   setA.forEach((value) => {
+  //     if (setB.has(value)) {
+  //       result.add(value);
+  //     }
+  //   });
   return result;
 }
 
