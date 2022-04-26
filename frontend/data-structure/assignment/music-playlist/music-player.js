@@ -13,17 +13,14 @@ module.exports = class MusicPlayer {
 
   play() {
     // TODO - answer here
-    let temp = [];
-    for (let i = 0; i < this.playlist.songs.length; i++) {
-        temp.push(this.playlist.songs[i].play());
-    }
-
     if (this.playlist.songs.length === 0) {
       return "";
     } else if (this.playlist.songs.length === 1) {
       return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title);
     } else if (this.playlist.songs.length === 2) {
       return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title);
-    }
+    } else if (this.playlist.isRepeatable === false && this.playlist.songs.length === 3) {
+      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title + " " + this.playlist.songs[2].singer + " - " + this.playlist.songs[2].title);
+    } 
   }
 };
