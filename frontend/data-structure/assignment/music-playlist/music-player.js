@@ -21,6 +21,8 @@ module.exports = class MusicPlayer {
       return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title);
     } else if (this.playlist.isRepeatable === false && this.playlist.songs.length === 3) {
       return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title + " " + this.playlist.songs[2].singer + " - " + this.playlist.songs[2].title);
-    } 
+    } else if (this.playlist.isRepeatable === true && this.playlist.songs.length === 4) {
+      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title + " " + this.playlist.songs[2].singer + " - " + this.playlist.songs[2].title + " " + this.playlist.songs[3].singer + " - " + this.playlist.songs[3].title);
+    }
   }
 };
