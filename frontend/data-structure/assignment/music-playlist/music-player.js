@@ -13,16 +13,22 @@ module.exports = class MusicPlayer {
 
   play() {
     // TODO - answer here
+    let result = "";
+
     if (this.playlist.songs.length === 0) {
-      return "";
-    } else if (this.playlist.songs.length === 1) {
-      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title);
-    } else if (this.playlist.songs.length === 2) {
-      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title);
-    } else if (this.playlist.isRepeatable === false && this.playlist.songs.length === 3) {
-      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title + " " + this.playlist.songs[2].singer + " - " + this.playlist.songs[2].title);
-    } else if (this.playlist.isRepeatable === true && this.playlist.songs.length === 4) {
-      return (this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title + " " + this.playlist.songs[1].singer + " - " + this.playlist.songs[1].title + " " + this.playlist.songs[2].singer + " - " + this.playlist.songs[2].title + " " + this.playlist.songs[3].singer + " - " + this.playlist.songs[3].title);
+      return result;
+    } else if (this.playlist.songs.length === 1 && !this.playlist.isRepeatable) {
+      return result += "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title;
+    } else if (this.playlist.songs.length === 1 && this.playlist.isRepeatable) {
+      return result += "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title;
+    } else if (this.playlist.songs.length > 1 && !this.playlist.isRepeatable) {
+      const result = "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title 
+      this.playlist.songs.shift()
+      return result
+    } else if (this.playlist.songs.length > 1 && this.playlist.isRepeatable) {
+      const result = "Now Playing " + this.playlist.songs[0].singer + " - " + this.playlist.songs[0].title 
+      this.playlist.songs.push(this.playlist.songs.shift())
+      return result
     }
   }
 };
