@@ -5,7 +5,7 @@ function IsValidParentheses(s) {
   const stack = [];
   
   // cek empty string
-  if (s.length == 0) {
+  if (s.length === 0) {
     return false;
   }
 
