@@ -19,12 +19,7 @@ module.exports = class TextEditor {
     this.stack.forEach((c) => {
       peek += c;
     });
-
-    if (peek.length === "") {
-      return "";
-    } else {
-      console.log(peek);
-    }
+    
     return peek;
   }
 
