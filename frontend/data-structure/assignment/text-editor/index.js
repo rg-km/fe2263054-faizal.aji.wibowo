@@ -4,14 +4,11 @@ module.exports = class TextEditor {
     this.stack = [];
     this.undoStack = [];
     this.redoStack = [];
-    this.top = -1;
-    this.size = 5;
   }
 
   write(c) {
     // TODO: answer here
     this.stack.push(c);
-    this.top++;
     this.undoStack.push(c);
   }
 
