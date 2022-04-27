@@ -29,7 +29,7 @@ module.exports = class Stack {
     }
 
     isEmpty() {
-        return this.top == -1;
+        return this.top === -1;
     }
 
     peek() {
