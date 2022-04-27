@@ -41,7 +41,6 @@ module.exports = class TextEditor {
       // push ke redo stack
       this.redoStack.push(lastUndo);
       // hapus elemen terakhir dari stack
-      this.top--;
       this.stack.pop();
     }
   }
@@ -55,8 +54,6 @@ module.exports = class TextEditor {
       let lastRedo = this.redoStack.pop();
       // push ke undo stack
       this.undoStack.push(lastRedo);
-      // push ke undo stack
-      this.top++;
       // push ke stack
       this.stack.push(lastRedo);
     }
