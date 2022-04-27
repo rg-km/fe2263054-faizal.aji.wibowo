@@ -36,19 +36,6 @@
 // Jadi semua siswa yang tidak bisa makan sandwich adalah 3 orang.
 
 function countStudentsCantEat(students, sandwiches) {
-    let cantEat = '';
-    let i = 0;
-    while (i < students.length) {
-        if (students[i] === 0 && sandwiches[0] === 0) {
-            cantEat++;
-            sandwiches.shift();
-        } else if (students[i] === 1 && sandwiches[0] === 1) {
-            cantEat++;
-            sandwiches.shift();
-        } else {
-            i++;
-        }
-    }
 	return 0 // TODO: replace this
 }
 
