@@ -35,8 +35,70 @@
 // - Siswa tersisa dengan preferensi 1, yaitu students = [1,1,1] dan sandwich paling atas adalah 0, sehingga siswa tidak dapat mengambil sandwich tersebut meskipun antri secara bergantian.
 // Jadi semua siswa yang tidak bisa makan sandwich adalah 3 orang.
 
+class Queue {
+    #lines; // ini antrian private
+    constructor() {
+        this.#lines = []; // membuat antrian kosong
+    }
+
+    // method untuk masuk antrian
+    enqueue(queue) {
+        this.#lines.push(queue);
+    }
+
+    // method untuk keluar antrian
+    dequeue() {
+        this.#lines.shift();
+    }
+
+    // method untuk antri ulang
+    requeue() {
+        const shiftData = this.#lines.shift();
+        this.#lines.push(shiftData);
+    }
+
+    // getter return semua antrian
+    get lines() {
+        return this.#lines;
+    }
+
+    // getter return antrian terdepan
+    get head() {
+        return this.#lines[0];
+    }
+}
+
 function countStudentsCantEat(students, sandwiches) {
-	return 0 // TODO: replace this
+	const studentsQueue = new Queue();
+    const sandwichesQueue = new Queue();
+
+    for (const student of students) {
+        studentsQueue.enqueue(student);
+    }
+
+    for (const sandwich of sandwiches) {
+        sandwichesQueue.enqueue(sandwich);
+    }
+
+    let isStoped = false;
+    let counter = studentsQueue.lines.length;
+
+    while (!isStoped) {
+        if (counter > 0) {
+            if (studentsQueue.head === sandwichesQueue.head) {
+                studentsQueue.dequeue();
+                sandwichesQueue.dequeue();
+                counter = studentsQueue.lines.length;
+            } else {
+                studentsQueue.requeue();
+                counter--;
+            }
+        } else {
+            isStoped = true;
+        }
+    }
+
+	return studentsQueue.lines.length; // TODO: replace this
 }
 
 console.log(countStudentsCantEat([1,1,1,0,0,1], [1,0,0,0,1,1])); // 3
