@@ -1,8 +1,7 @@
 import React from "react";
-
 export const Item = (props) => {
   // TODO: answer here
-  const { id, image, title } = props;
+  const { id, image, title, total, setTotal, setAlert } = props;
   const [item, setItem] = React.useState(0);
 
   return (
@@ -15,6 +14,7 @@ export const Item = (props) => {
           onClick={() => {
             // TODO: answer here
             setItem(item - 1);
+            setTotal(total - 1);
           }}
         >
           -
@@ -30,7 +30,12 @@ export const Item = (props) => {
           aria-label={`add-button-${id}`}
           onClick={() => {
             // TODO: answer here
-            setItem(item + 1);
+            if (item >= 10) {
+              setAlert(true);
+            } else {
+              setItem(item + 1);
+              setTotal(total + 1);
+            }
           }}
         >
           +
@@ -80,6 +85,9 @@ function App() {
             id={element.id}
             image={element.image}
             title={element.title}
+            total={total}
+            setTotal={setTotal}
+            setAlert={showAlert}
           />
         ))}
       </div>
