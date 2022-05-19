@@ -7,15 +7,11 @@ export default function App() {
 export function RandomQuote() {
   // TODO: answer here
   const [quote, setQuote] = React.useState("");
-  // const [author, setAuthor] = React.useState("");
-  const [color, setColor] = React.useState("#fff");
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // TODO: answer here
-    const interval = setInterval(() => {
-      setColor(generateColor());
-    }, 1000);
-    return () => clearInterval(interval);
+    // TODO: answer heres
+    getQuote();
   }, []);
 
   function getQuote() {
@@ -27,22 +23,25 @@ export function RandomQuote() {
   }
 
   // TODO: answer here
-  function generateColor() {
-    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-  }
-
   return (
-    <div style={{ backgroundColor: color, width: "100vw", height: "100vh" }}>
-      <h1>Random Quote</h1>
-      <button onClick={getQuote}>Get Quote</button>
-      {loading && <p>Loading...</p>}
-      {!loading && (
-        <>
-          <p>{quote.content}</p>
-          <p>{quote.author}</p>
-        </>
-      )}
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+        <h2>Random Quote</h2>
+      </nav>
+
+      <div className="container p-3">
+        <div className="d-flex flex-column justify-content-center align-items-center bg-warning">
+          <figure>
+            <blockquote>
+              <p data-testid="quote">
+                {loading ? "Loading..." : quote.content}
+              </p>
+            </blockquote>
+            <figcaption className="blockquote-footer">{quote.author}</figcaption>
+          </figure>
+          <button className="btn btn-primary" onClick={getQuote}>Get another quote</button>
+        </div>
+      </div>
     </div>
   );
-
 }
