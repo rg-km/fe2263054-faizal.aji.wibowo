@@ -1,12 +1,14 @@
-import React, { useState } from "react"
-import { getSession, auth } from "../api/auth"
-// import { SessionContext } from "../context/SessionContext"
+import { useEffect, useState } from "react";
+import React from "react";
+
+import { getSession, auth } from "../api/auth";
+// import { useContext } from "react";
+// import { SessionContext } from "../context/SessionContext";
 
 export default function Navbar() {
   // TODO: answer here
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [user, setUser] = useState({});
 
   // check user if logged
   const checkUser = async () => {
@@ -16,9 +18,9 @@ export default function Navbar() {
     } else {
       setIsLoggedIn(false);
     }
-  };    
+  };
 
-  React.useEffect(() => {
+  useEffect(() => {
     checkUser();
   }, []);
 
@@ -31,24 +33,30 @@ export default function Navbar() {
         <div className="navbar-menu">
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a className="navbar-link" aria-label="App Title" href="/">Icon</a>
+              <a className="navbar-link" aria-label="App Title" href="/">
+                Icon
+              </a>
             </li>
             <li className="navbar-item">
-              {
-                isLoggedIn ?
-                  <a className="navbar-link" aria-label="Profile" href="/profile">Profile John Doe</a>
-                  :
-                  <button className="navbar-link" aria-label="Login" onClick={
-                    () => {
-                      auth();
-                    }
-                  }>Login</button>
-
-              }
+              {isLoggedIn ? (
+                <a className="navbar-link" aria-label="Profile" href="/profile">
+                  Profile John Doe
+                </a>
+              ) : (
+                <button
+                  className="navbar-link"
+                  aria-label="Login"
+                  onClick={() => {
+                    auth();
+                  }}
+                >
+                  Login
+                </button>
+              )}
             </li>
           </ul>
         </div>
       </div>
     </div>
-  )
+  );
 }
