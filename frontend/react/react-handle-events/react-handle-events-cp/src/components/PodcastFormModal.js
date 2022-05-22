@@ -20,22 +20,56 @@ const PodcastFormModal = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     // TODO: answer here
+    setFormValues({ ...formValues, [name]: value });
+
   };
 
   const handleFormSubmit = async () => {
     // TODO: answer here
+    if (formModalType === "add") {
+    }
+    try {
+      const response = await axios.post(
+        Constants.API_URL + "/podcasts",
+        formValues
+      );
+      if (response.status === 201) {
+        setPodcastList([...podcastList, response.data]);
+        setFormValues({});
+        setShowFormModal(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onCloseModal = () => {
     // TODO: answer here
+    setFormValues({});
+    setShowFormModal(false);
+    setFormModalType("add");
   };
 
   const getPodcastById = async () => {
     // TODO: answer here
+    getPodcastById(podcastId);
+    try {
+      const response = await axios.get(
+        Constants.API_URL + "/podcasts/" + podcastId
+      );
+      if (response.status === 200) {
+        setFormValues(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     // TODO: answer here
+    if (formModalType === "update") {
+      getPodcastById();
+    }
   }, [showFormModal]);
 
   return (
