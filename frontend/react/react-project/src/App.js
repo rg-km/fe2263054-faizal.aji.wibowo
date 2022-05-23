@@ -3,6 +3,7 @@ import "./App.css";
 import React from "react";
 import Navbar from "./components/Navbar";
 import LikeDislikeButton from "./components/LikeDislikeButton";
+import PostCard from "./components/PostCard";
 
 function App() {
   // TODO: answer here
@@ -13,6 +14,7 @@ function App() {
       <div className="ImportItem">
         <Navbar />
         <LikeDislikeButton />
+        <PostCard />
       </div>
     </div>
   );
