@@ -9,7 +9,7 @@ function App() {
   // TODO: answer here
   return (
     <div aria-label="App" className="App">
-      <h1 aria-label="App Title">IG Clone</h1>
+      <h1 aria-label="App Title">Instagram Clone</h1>
 
       <div className="ImportItem">
         <Navbar />
