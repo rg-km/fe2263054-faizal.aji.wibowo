@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
 import Constants from "../Constants";
-import './PodcastFormModal.css';
+import "./PodcastFormModal.css";
 
 const PodcastFormModal = (props) => {
   const {
@@ -15,7 +15,6 @@ const PodcastFormModal = (props) => {
     formModalType,
     podcastId,
   } = props;
-
   const [formValues, setFormValues] = useState({});
 
   const handleInputChange = (event) => {
@@ -26,15 +25,14 @@ const PodcastFormModal = (props) => {
 
   const handleFormSubmit = async () => {
     // TODO: answer here
-    if (formModalType === "add") {
+    if (formModalType === "CREATE") {
       const { data } = await axios.post(
         Constants.API_URL + "/podcasts",
         formValues
       );
       setPodcastList([...podcastList, data]);
     }
-    
-    if (formModalType === "update") {
+    if (formModalType === "UPDATE") {
       const { data } = await axios.put(
         Constants.API_URL + "/podcasts/" + podcastId,
         formValues
@@ -51,7 +49,7 @@ const PodcastFormModal = (props) => {
     // TODO: answer here
     setFormValues({});
     setShowFormModal(false);
-    setFormModalType("add");
+    setFormModalType("ADD");
   };
 
   const getPodcastById = async () => {
@@ -71,10 +69,10 @@ const PodcastFormModal = (props) => {
 
   useEffect(() => {
     // TODO: answer here
-    if (formModalType === "update") {
+    if (formModalType === "UPDATE") {
       getPodcastById();
     }
-  });
+  }, [formModalType, podcastId]);
 
   return (
     <Modal show={showFormModal} onHide={onCloseModal}>
