@@ -11,12 +11,12 @@ const PodcastLists = () => {
   const [podcastList, setPodcastList] = useState([]);
   const [showFormModal, setShowFormModal] = useState(false);
   const [formModalType, setFormModalType] = useState("ADD");
-  const [podcastId, setPodcastId] = useState(0);
+  const [podcastId, setPodcastId] = useState(0)
 
   const getPodcastListData = async () => {
     // TODO: answer here
-    const { data } = await axios.get(Constants.API_URL + "/podcasts");
-    setPodcastList(data);
+    const response = await axios.get(Constants.API_URL);
+    setPodcastList(response.data);
   };
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const PodcastLists = () => {
         <Button
           style={{ marginTop: 10, marginLeft: 10, alignSelf: "flex-end" }}
           variant="primary"
-          onClick={() => setShowFormModal(true)}
+          onClick={() => {setFormModalType("UPDATE");setShowFormModal(true);}}
         >
           + Add Podcasts
         </Button>
@@ -47,6 +47,7 @@ const PodcastLists = () => {
               setPodcastId={setPodcastId}
             />
           );
+
         })}
       </div>
       <PodcastFormModal
