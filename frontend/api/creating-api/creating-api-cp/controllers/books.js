@@ -54,8 +54,42 @@ export const getBook = (req, res) => {
 
 export const deleteBook = (req, res) => {
   // TODO: answer here
+  const bookItem = books.find((book) => book.id == req.params.id);
+
+  if (bookItem) {
+    books.splice(books.indexOf(bookItem), 1);
+    res.status(200).json({
+      success: true,
+      message: `book with id ${req.params.id} has been deleted`,
+      data: bookItem
+    });
+  } else {
+    res.status(404).json({
+      message: `book with id ${req.params.id} not found`
+    });
+  }
+
+  console.log(`book with id ${req.params.id} has been deleted`);
 };
 
 export const updateBook = (req, res) => {
   // TODO: answer here
+  const book = req.body;
+  const bookItem = books.find((book) => book.id == req.params.id);
+
+  if (bookItem) {
+    bookItem.title = book.title;
+    bookItem.author = book.author;
+    res.status(200).json({
+      success: true,
+      message: `title has been updated to ${book.title}.author has been updated to ${book.author}`,
+      data: bookItem
+    });
+  } else {
+    res.status(404).json({
+      message: `book with id ${req.params.id} not found`
+    });
+  }
+
+  console.log(`title has been updated to ${book.title}.author has been updated to ${book.author}`);
 };
